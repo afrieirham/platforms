@@ -6,9 +6,13 @@ module.exports = {
     serverActions: true,
   },
   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.public.blob.vercel-storage.com",
+      },
+    ],
     domains: [
-      "enanimvsbipjhgkn.public.blob.vercel-storage.com",
-      "public.blob.vercel-storage.com",
       "res.cloudinary.com",
       "abs.twimg.com",
       "pbs.twimg.com",
@@ -17,7 +21,6 @@ module.exports = {
       "www.google.com",
       "flag.vercel.app",
       "illustrations.popsy.co",
-      "afrieirham.xyz",
     ],
   },
   reactStrictMode: false,
