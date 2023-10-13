@@ -58,9 +58,6 @@ export default async function SiteHomePage({
   const data = await getSiteData(params.domain);
 
   return (
-    <iframe
-      className="min-h-screen w-full border-none"
-      src={"https://x-frame-options.vercel.app/?url=" + data?.targetUrl}
-    />
+    <iframe className="min-h-screen w-full border-none" src={data?.targetUrl} />
   );
 }
