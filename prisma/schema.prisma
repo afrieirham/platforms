@@ -93,6 +93,8 @@ model Post {
 model Site {
   id            String   @id @default(cuid())
   name          String?
+  pageTitle     String?
+  targetUrl     String
   description   String?  @db.Text
   logo          String?  @default("https://public.blob.vercel-storage.com/eEZHAoPTOBSYGBE3/JRajRyC-PhBHEinQkupt02jqfKacBVHLWJq7Iy.png") @db.Text
   font          String   @default("font-cal")

@@ -17,13 +17,40 @@ export default async function SiteSettingsIndex({
   return (
     <div className="flex flex-col space-y-6">
       <Form
-        title="Name"
-        description="The name of your site. This will be used as the meta title on Google as well."
+        title="Subdomain"
+        description=""
         helpText="Please use 32 characters maximum."
         inputAttrs={{
           name: "name",
           type: "text",
           defaultValue: data?.name!,
+          placeholder: "My Awesome Site",
+          maxLength: 32,
+        }}
+        handleSubmit={updateSite}
+      />
+
+      <Form
+        title="Target URL"
+        description=""
+        helpText=""
+        inputAttrs={{
+          name: "targetUrl",
+          type: "url",
+          defaultValue: data?.targetUrl!,
+          placeholder: "My Awesome Site",
+        }}
+        handleSubmit={updateSite}
+      />
+
+      <Form
+        title="Page Title"
+        description="The name of your site. This will be used as the meta title on Google as well."
+        helpText="Please use 32 characters maximum."
+        inputAttrs={{
+          name: "pageTitle",
+          type: "text",
+          defaultValue: data?.pageTitle!,
           placeholder: "My Awesome Site",
           maxLength: 32,
         }}

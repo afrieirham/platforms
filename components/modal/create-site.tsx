@@ -16,6 +16,7 @@ export default function CreateSiteModal() {
 
   const [data, setData] = useState({
     name: "",
+    targetUrl: "",
     subdomain: "",
     description: "",
   });
@@ -73,6 +74,25 @@ export default function CreateSiteModal() {
 
         <div className="flex flex-col space-y-2">
           <label
+            htmlFor="targetUrl"
+            className="text-sm font-medium text-stone-500 dark:text-stone-400"
+          >
+            Target URL
+          </label>
+          <input
+            name="targetUrl"
+            type="url"
+            placeholder="My Awesome Site"
+            autoFocus
+            value={data.targetUrl}
+            onChange={(e) => setData({ ...data, targetUrl: e.target.value })}
+            required
+            className="w-full rounded-md border border-stone-200 bg-stone-50 px-4 py-2 text-sm text-stone-600 placeholder:text-stone-400 focus:border-black focus:outline-none focus:ring-black dark:border-stone-600 dark:bg-black dark:text-white dark:placeholder-stone-700 dark:focus:ring-white"
+          />
+        </div>
+
+        <div className="flex flex-col space-y-2">
+          <label
             htmlFor="subdomain"
             className="text-sm font-medium text-stone-500"
           >
@@ -111,7 +131,7 @@ export default function CreateSiteModal() {
             onChange={(e) => setData({ ...data, description: e.target.value })}
             maxLength={140}
             rows={3}
-            className="w-full rounded-md border border-stone-200 bg-stone-50 px-4 py-2 text-sm text-stone-600 placeholder:text-stone-400 focus:border-black  focus:outline-none focus:ring-black dark:border-stone-600 dark:bg-black dark:text-white dark:placeholder-stone-700 dark:focus:ring-white"
+            className="w-full rounded-md border border-stone-200 bg-stone-50 px-4 py-2 text-sm text-stone-600 placeholder:text-stone-400 focus:border-black focus:outline-none focus:ring-black dark:border-stone-600 dark:bg-black dark:text-white dark:placeholder-stone-700 dark:focus:ring-white"
           />
         </div>
       </div>

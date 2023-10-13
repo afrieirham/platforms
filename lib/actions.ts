@@ -31,12 +31,14 @@ export const createSite = async (formData: FormData) => {
   const name = formData.get("name") as string;
   const description = formData.get("description") as string;
   const subdomain = formData.get("subdomain") as string;
+  const targetUrl = formData.get("targetUrl") as string;
 
   try {
     const response = await prisma.site.create({
       data: {
         name,
         description,
+        targetUrl,
         subdomain,
         user: {
           connect: {
